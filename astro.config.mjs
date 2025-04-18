@@ -12,4 +12,7 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+  server: {
+    allowedHosts: ["4321-darkhaamn-awscommunity-u6acxavu3b3.ws-us118.gitpod.io"]
+  }
 });
