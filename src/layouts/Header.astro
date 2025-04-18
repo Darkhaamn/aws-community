@@ -1,0 +1,54 @@
+---
+import Logo from "@/components/Logo.astro";
+import ThemeToggle from "@/components/ThemeToggle";
+---
+
+<header
+  class="sticky top-0 z-40 w-full border-b border-border/40 bg-background/80 backdrop-blur-sm"
+>
+  <div class="container flex h-16 items-center">
+    <div class="flex gap-6 md:gap-10">
+      <a href="/" class="flex items-center space-x-2">
+        <Logo className="size-8" />
+        <span class="inline-block font-semibold">
+          Community <span class="text-primary">Mongolia</span>
+        </span>
+      </a>
+      <nav class="hidden gap-6 md:flex">
+        <a
+          href="#about"
+          class="flex items-center text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+        >
+          About
+        </a>
+        <a
+          href="#event"
+          class="flex items-center text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+        >
+          Event
+        </a>
+        <a
+          href="#organizers"
+          class="flex items-center text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+        >
+          Organizers
+        </a>
+        <a
+          href="#previous"
+          class="flex items-center text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+        >
+          Previous Events
+        </a>
+        <a
+          href="#blog"
+          class="flex items-center text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+        >
+          Blog
+        </a>
+      </nav>
+    </div>
+    <div class="flex flex-1 items-center justify-end">
+      <ThemeToggle client:load />
+    </div>
+  </div>
+</header>

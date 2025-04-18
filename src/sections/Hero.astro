@@ -1,0 +1,62 @@
+---
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import { Image } from "astro:assets";
+import { ChevronRight } from "lucide-react";
+---
+
+<section
+  class="relative overflow-hidden bg-gradient-to-b from-background to-background/80 dark:from-background dark:to-background/80 dark:bg-grid-white/[0.05] bg-grid-black/[0.02]"
+>
+  <div
+    class="absolute inset-0 bg-background/40 dark:bg-background/60 [mask-image:radial-gradient(transparent,white)] pointer-events-none"
+  >
+  </div>
+  <div class="container relative px-4 py-24 md:py-32 lg:py-40 md:px-6">
+    <div
+      class="grid gap-8 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]"
+    >
+      <div class="flex flex-col justify-center space-y-4">
+        <h1
+          class="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
+        >
+          AWS Community <span class="text-primary">Mongolia</span>
+        </h1>
+        <p class="max-w-[600px] text-muted-foreground md:text-xl">
+          Join the largest cloud computing community in Mongolia. Connecting
+          cloud enthusiasts and professionals in Mongolia Learn, share, and grow
+          with AWS technologies
+        </p>
+        <div class="flex flex-col gap-4 min-[400px]:flex-row">
+          <a
+            href="#event"
+            class={cn(
+              buttonVariants({
+                className:
+                  "bg-orange-600 hover:bg-orange-700 dark:bg-orange-600 dark:hover:bg-orange-700 text-white",
+              }),
+            )}
+          >
+            Upcoming Event <ChevronRight className="ml-2 h-4 w-4" />
+          </a>
+          <a href="#about" class={cn(buttonVariants({ variant: "outline" }))}>
+            Learn More
+          </a>
+        </div>
+      </div>
+      <div class="relative">
+        <div
+          class="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-orange-600 to-orange-400 opacity-30 blur-xl"
+        >
+        </div>
+        <Image
+          width={550}
+          height={550}
+          alt="AWS Mongolia Community"
+          src="https://blog.aws.mn/content/images/size/w1600/2024/06/JAY09088.jpg"
+          class="relative mx-auto aspect-video overflow-hidden rounded-xl object-cover sm:w-full"
+        />
+      </div>
+    </div>
+  </div>
+</section>

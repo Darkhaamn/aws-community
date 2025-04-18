@@ -1,0 +1,78 @@
+---
+import { Image } from "astro:assets";
+---
+
+<section id="about" class="w-full py-12 md:py-24 lg:py-32 bg-muted/30">
+  <div class="container px-4 md:px-6">
+    <div
+      class="flex flex-col items-center justify-center space-y-4 text-center"
+    >
+      <div class="space-y-2">
+        <div
+          class="inline-block rounded-lg bg-orange-100 px-3 py-1 text-sm text-orange-800 dark:bg-orange-900/30 dark:text-orange-300"
+        >
+          Our Purpose
+        </div>
+        <h2 class="text-3xl font-bold tracking-tighter sm:text-5xl">
+          Building Mongolia's Cloud Future
+        </h2>
+        <p
+          class="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed"
+        >
+          The Mongolian AWS Community is dedicated to fostering cloud computing
+          knowledge and skills across Mongolia. We bring together students,
+          professionals, and businesses to learn, share experiences, and grow
+          together in the AWS ecosystem.
+        </p>
+      </div>
+    </div>
+    <div
+      class="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-2 lg:gap-12"
+    >
+      <div class="relative">
+        <div
+          class="absolute -inset-1 rounded-xl bg-gradient-to-r from-orange-600/20 to-orange-400/20 opacity-70 blur-xl"
+        >
+        </div>
+        <Image
+          width={500}
+          height={400}
+          alt="AWS Mongolia Community Event"
+          src="https://blog.aws.mn/content/images/size/w1600/2024/06/DSC08193.jpg"
+          class="relative mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full"
+        />
+      </div>
+      <div class="flex flex-col justify-center space-y-4">
+        <ul class="grid gap-6">
+          <li>
+            <div class="grid gap-1">
+              <h3 class="text-xl font-bold">Knowledge Sharing</h3>
+              <p class="text-muted-foreground">
+                Regular workshops, webinars, and hands-on sessions to share AWS
+                knowledge and best practices.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="grid gap-1">
+              <h3 class="text-xl font-bold">Career Growth</h3>
+              <p class="text-muted-foreground">
+                Certification preparation, mentorship, and networking
+                opportunities to advance your cloud career.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="grid gap-1">
+              <h3 class="text-xl font-bold">Innovation</h3>
+              <p class="text-muted-foreground">
+                Collaborative projects and hackathons to solve local challenges
+                using AWS technologies.
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

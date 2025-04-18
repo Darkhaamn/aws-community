@@ -1,0 +1,104 @@
+---
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Image } from "astro:assets";
+import { Linkedin } from "lucide-react";
+
+const data = [
+  {
+    name: "Jiguur Na",
+    image: "https://2024.aws.mn/assets/jiguur-DAk0gaHO.webp",
+    description: "The Godfather",
+    linkedin: "https://www.linkedin.com/in/jiguurn/",
+    achievements: "ex-Organizer of AWS User Group of Mongolia",
+  },
+  {
+    name: "Tuguldur Demberel",
+    image:
+      "https://scontent.fuln2-2.fna.fbcdn.net/v/t39.30808-6/486292521_3990106354560772_5903316084258140829_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=VVs3FgY4g5cQ7kNvwF0IO9j&_nc_oc=AdlQdLZGKCehODfItaaf7t3CVdPbeDvGxB3RhDtGTfkoeXzl7jjawv_YaCPgOVA8tgc&_nc_zt=23&_nc_ht=scontent.fuln2-2.fna&_nc_gid=eH17lawjBz5ZNE3dqcb4sA&oh=00_AfGQ5Ihr-yIp-ma1wVeXwkKrZvLA15v5R3kD_zS6R8pKSQ&oe=6807CB1C",
+    description: "Nova generatio",
+    linkedin: "https://www.linkedin.com/in/tuguldur-dev/",
+    achievements: "Organizer of AWS User Group of Mongolia",
+  },
+  {
+    name: "Darkhantsetseg",
+    image:
+      "https://scontent.fuln2-2.fna.fbcdn.net/v/t39.30808-6/491947053_9942637485843770_7322688543776045716_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=108&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=vexedGtJ3bQQ7kNvwH5Y_-O&_nc_oc=AdnNt9mEobatcEdszJ18EwqQubFVrN7qgtOqC0xF52P37L4-EkNlImWR9ucdg0nETPo&_nc_zt=23&_nc_ht=scontent.fuln2-2.fna&_nc_gid=1tMSh4ZCjlHddKXrmkRQ_Q&oh=00_AfF4bfW-0D1IbabfaeHs2B7q_CE5s_NjVH4RmMMEXNwb0w&oe=6806846D",
+    description: "a.k.a Suga Bandi",
+    linkedin: "https://www.linkedin.com/in/darkhanbayar-erdenebat/",
+    achievements:
+      "Chuluut irgen, shiwegchin, zarts and nothing good about them 😎",
+  },
+];
+---
+
+<section id="organizers" class="w-full py-12 md:py-24 lg:py-32 bg-muted/30">
+  <div class="container px-4 md:px-6">
+    <div
+      class="flex flex-col items-center justify-center space-y-4 text-center"
+    >
+      <div class="space-y-2">
+        <div
+          class="inline-block rounded-lg bg-orange-100 px-3 py-1 text-sm text-orange-800 dark:bg-orange-900/30 dark:text-orange-300"
+        >
+          Meet The Team
+        </div>
+        <h2 class="text-3xl font-bold tracking-tighter sm:text-5xl">
+          Our Organizers
+        </h2>
+        <p
+          class="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed"
+        >
+          Meet the dedicated team behind the Mongolian AWS Community.
+        </p>
+      </div>
+    </div>
+    <div class="mx-auto grid max-w-5xl gap-8 py-12 md:grid-cols-3 lg:gap-12">
+      {
+        data.map((item) => (
+          <Card className="pt-0 text-center border-0 bg-background shadow-lg dark:shadow-orange-900/5 dark:bg-card/80 overflow-hidden group">
+            <div class="h-1 bg-gradient-to-r from-orange-500 to-orange-400" />
+            <CardHeader className="pb-2">
+              <div class="flex justify-center">
+                <div class="relative">
+                  <div class="absolute -inset-0.5 rounded-full bg-gradient-to-r from-orange-600 to-orange-400 opacity-25 blur group-hover:opacity-75 transition duration-300" />
+                  <Image
+                    width={150}
+                    height={150}
+                    alt={item.name}
+                    src={item.image}
+                    class="relative rounded-full aspect-square object-cover"
+                  />
+                </div>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <CardTitle>{item.name}</CardTitle>
+              <CardDescription className="mt-2">
+                {item.description}
+              </CardDescription>
+              <p class="mt-4 text-sm text-muted-foreground">
+                {item.achievements}
+              </p>
+            </CardContent>
+            <CardFooter className="flex justify-center gap-4">
+              <a
+                href={item.linkedin}
+                aria-label={item.name}
+                class="text-muted-foreground hover:text-orange-500 dark:hover:text-orange-400 transition-colors"
+              >
+                <Linkedin className="size-5" />
+              </a>
+            </CardFooter>
+          </Card>
+        ))
+      }
+    </div>
+  </div>
+</section>

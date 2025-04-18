@@ -1,0 +1,121 @@
+---
+import { buttonVariants } from "@/components/ui/button";
+import {
+  Card,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { cn } from "@/lib/utils";
+import { Image } from "astro:assets";
+import { ArrowRight } from "lucide-react";
+
+const data = [
+  {
+    title: "Hacknight Vol.23",
+    description:
+      "The past few years have seen explosive advancements in AI, and one of the hottest trends right now is Agent AI. While traditional AI has focused on reasoning and problem-solving",
+    date: "March 09, 2025",
+    image:
+      "https://blog.aws.mn/content/images/size/w2000/2025/03/480575152_1046015554227460_6893949316264624360_n-2.jpg",
+    link: "https://blog.aws.mn/hacknight-vol-23/",
+  },
+  {
+    title: "AWS GameDay Overview... 🎮☁️",
+    description:
+      "Last Saturday, June 15th, we held this exciting competition for the first time in the lecture hall of Building VIII at MUST. 🎉 In a given AWS cloud environment, 67 engineers from 19 teams competed in a CTF-style 💻🏆",
+    date: "July 05, 2024",
+    image: "https://blog.aws.mn/content/images/size/w2000/2024/06/DSC08295.jpg",
+    link: "https://blog.aws.mn/aws-gameday-overview/",
+  },
+  {
+    title:
+      "AWS Community Day 2024: A Gathering of IT Professionals and Cloud Technology Enthusiasts",
+    description:
+      "On June 14-15, IT professionals, especially those who run their server infrastructure",
+    date: "July 05, 2024",
+    image: "https://blog.aws.mn/content/images/size/w2000/2024/06/DSC08056.jpg",
+    link: "https://blog.aws.mn/aws-community-day-2024-a-gathering-of-it-professionals-and-cloud-technology-enthusiasts/",
+  },
+];
+---
+
+<section id="blog" class="w-full py-12 md:py-24 lg:py-32 bg-muted/30">
+  <div class="container px-4 md:px-6">
+    <div
+      class="flex flex-col items-center justify-center space-y-4 text-center"
+    >
+      <div class="space-y-2">
+        <div
+          class="inline-block rounded-lg bg-orange-100 px-3 py-1 text-sm text-orange-800 dark:bg-orange-900/30 dark:text-orange-300"
+        >
+          Latest Articles
+        </div>
+        <h2 class="text-3xl font-bold tracking-tighter sm:text-5xl">
+          Blog & Resources
+        </h2>
+        <p
+          class="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed"
+        >
+          Stay updated with the latest AWS news, tutorials, and community
+          stories.
+        </p>
+      </div>
+    </div>
+    <div class="mx-auto grid max-w-5xl gap-8 py-12 md:grid-cols-3 lg:gap-12">
+      {
+        data.map((item) => (
+          <Card
+            key={item.link}
+            className="flex pt-0 flex-col overflow-hidden border-0 bg-background shadow-lg dark:shadow-orange-900/5 dark:bg-card/80 group"
+          >
+            <div class="relative overflow-hidden">
+              <Image
+                width={500}
+                height={250}
+                alt={item.title}
+                src={item.image}
+                class="aspect-video w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </div>
+            <CardHeader>
+              <CardTitle className="leading-tight">{item.title}</CardTitle>
+              <CardDescription>{item.description}</CardDescription>
+            </CardHeader>
+            <CardFooter className="mt-auto flex justify-between">
+              <div class="text-sm text-muted-foreground">{item.date}</div>
+              <a
+                target="_blank"
+                href={item.link}
+                aria-label={item.title}
+                referrerpolicy="no-referrer"
+                class={cn(
+                  buttonVariants({
+                    size: "sm",
+                    variant: "ghost",
+                    className:
+                      "text-orange-600 hover:text-orange-700 hover:bg-orange-50 dark:text-orange-400 dark:hover:text-orange-300 dark:hover:bg-orange-900/20",
+                  }),
+                )}
+              >
+                Read More <ArrowRight className="ml-2 h-4 w-4" />
+              </a>
+            </CardFooter>
+          </Card>
+        ))
+      }
+    </div>
+    <div class="flex justify-center">
+      <a
+        target="_blank"
+        referrerpolicy="no-referrer"
+        href="https://blog.aws.mn"
+        class={cn(buttonVariants({ variant: "ghost" }))}
+      >
+        View All Articles <ArrowRight className="ml-2 h-4 w-4" />
+      </a>
+    </div>
+  </div>
+</section>
