@@ -1,16 +1,56 @@
 ---
 import Logo from "@/components/Logo.astro";
+import { Facebook, MessageCircle, Youtube } from "lucide-react";
 ---
 
-<footer class="w-full border-t border-border/40 bg-background">
-  <div
-    class="container flex flex-col items-center justify-center gap-4 py-10 md:h-24 md:flex-row md:py-0"
-  >
-    <div class="flex items-center gap-4">
-      <Logo className="size-8" />
-      <p class="text-center text-sm text-muted-foreground">
-        &copy; {new Date().getFullYear()} AWS Community Mongolia
-      </p>
+<footer class="w-full py-6 bg-background">
+  <div class="container px-4 md:px-6">
+    <div class="grid gap-8 md:grid-cols-2">
+      <div>
+        <div class="flex items-center gap-2">
+          <Logo className="size-8" />
+          <span class="font-bold">AWS Mongolia</span>
+        </div>
+        <p class="mt-2 text-sm text-muted-foreground max-w-md">
+          Join the largest cloud computing community in Mongolia. Learn, share,
+          and grow with AWS enthusiasts and professionals.
+        </p>
+      </div>
+      <div class="flex flex-col items-start md:items-end gap-4">
+        <div class="text-sm font-medium">Connect with us</div>
+        <div class="flex gap-4">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.facebook.com/aws.mongolia"
+            class="flex items-center gap-2 text-muted-foreground hover:text-orange-500 dark:hover:text-orange-400 transition-colors"
+          >
+            <Facebook className="size-5" />
+            <span class="sr-only md:not-sr-only md:text-sm">Facebook</span>
+          </a>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://t.me/+fYDhCL-0ofQ2ZjM1"
+            class="flex items-center gap-2 text-muted-foreground hover:text-orange-500 dark:hover:text-orange-400 transition-colors"
+          >
+            <MessageCircle className="size-5" />
+            <span class="sr-only md:not-sr-only md:text-sm">Telegram</span>
+          </a>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.youtube.com/@cloud.academy.mongolia"
+            class="flex items-center gap-2 text-muted-foreground hover:text-orange-500 dark:hover:text-orange-400 transition-colors"
+          >
+            <Youtube className="size-5" />
+            <span class="sr-only md:not-sr-only md:text-sm">YouTube</span>
+          </a>
+        </div>
+        <div class="text-center text-sm text-muted-foreground mt-4">
+          &copy; {new Date().getFullYear()} Mongolian AWS Community
+        </div>
+      </div>
     </div>
   </div>
 </footer>
