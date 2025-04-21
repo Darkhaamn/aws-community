@@ -1,56 +1,78 @@
 ---
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Image } from 'astro:assets';
-import { Linkedin } from 'lucide-react';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Image } from "astro:assets";
+import { Linkedin } from "lucide-react";
 
 const data = [
   {
-    name: 'Jiguur Na',
-    image: '/jiguur.webp',
-    description: 'Co-Founder, CEO at Sky Whale Labs',
-    linkedin: 'https://www.linkedin.com/in/jiguurn/',
-    achievements: 'Community Leader at AWS User Group Ulaanbaatar',
+    name: "Jiguur Na",
+    image: "/jiguur.webp",
+    description: "Co-Founder, CEO at Sky Whale Labs",
+    linkedin: "https://www.linkedin.com/in/jiguurn/",
+    achievements: "Community Leader at AWS User Group Ulaanbaatar",
   },
   {
-    name: 'Tuguldur Demberel',
-    image: '/tuguldur.jpg',
-    description: 'Technology Architect At Khan Bank',
-    linkedin: 'https://www.linkedin.com/in/tuguldur-dev/',
-    achievements: 'Community Leader at AWS User Group Ulaanbaatar',
+    name: "Tuguldur Demberel",
+    image: "/tuguldur.jpg",
+    description: "Technology Architect At Khan Bank",
+    linkedin: "https://www.linkedin.com/in/tuguldur-dev/",
+    achievements: "Community Leader at AWS User Group Ulaanbaatar",
   },
   {
-    name: 'Darkhanbayar Erdenebat',
-    image: '/suga.jpg',
-    description: '-',
-    linkedin: 'https://www.linkedin.com/in/darkhanbayar-erdenebat/',
-    achievements: 'Community Leader at AWS User Group Ulaanbaatar',
+    name: "Darkhanbayar Erdenebat",
+    image: "/suga.jpg",
+    description: "Senior Software Enginner at FIBO CLOUD",
+    linkedin: "https://www.linkedin.com/in/darkhanbayar-erdenebat/",
+    achievements: "Community Leader at AWS User Group Ulaanbaatar",
   },
   {
-    name: 'Khongorzul Purev',
-    image: '/hoko.jpeg',
-    linkedin: 'https://www.linkedin.com/in/khongorzul-purev-bb1233159/',
-    description: 'Senior system engineer At FIBO CLOUD',
-    achievements: 'Community Leader at AWS User Group Ulaanbaatar',
+    name: "Khongorzul Purev",
+    image: "/hoko.jpeg",
+    linkedin: "https://www.linkedin.com/in/khongorzul-purev-bb1233159/",
+    description: "Senior System Engineer At FIBO CLOUD",
+    achievements: "Community Leader at AWS User Group Ulaanbaatar",
   },
   {
-    name: 'Bat-Orgil Davaajantsan',
-    image: '/batorgil.jpeg',
-    linkedin: 'https://www.linkedin.com/in/batorgil-it/',
-    description: 'Technology Architect At Khan Bank',
-    achievements: 'Community Leader at AWS User Group Ulaanbaatar',
+    name: "Bat-Orgil Davaajantsan",
+    image: "/batorgil.jpeg",
+    linkedin: "https://www.linkedin.com/in/batorgil-it/",
+    description: "Technology Architect At Khan Bank",
+    achievements: "Community Leader at AWS User Group Ulaanbaatar",
+  },
+  {
+    name: "Uurtsaikh Nyambat",
+    image: "/uurtsaikh.jpg",
+    linkedin: "https://www.linkedin.com/in/uurtsaikh-nyambat/",
+    description: "Senior Software Engineer At Zerotech",
+    achievements: "Community Leader at AWS User Group Ulaanbaatar",
   },
 ];
 ---
 
 <section id="organizers" class="w-full py-12 md:py-24 lg:py-32 bg-muted/30">
   <div class="container px-4 md:px-6">
-    <div class="flex flex-col items-center justify-center space-y-4 text-center">
+    <div
+      class="flex flex-col items-center justify-center space-y-4 text-center"
+    >
       <div class="space-y-2">
-        <div class="inline-block rounded-lg bg-orange-100 px-3 py-1 text-sm text-orange-800 dark:bg-orange-900/30 dark:text-orange-300">
+        <div
+          class="inline-block rounded-lg bg-orange-100 px-3 py-1 text-sm text-orange-800 dark:bg-orange-900/30 dark:text-orange-300"
+        >
           Meet The Team
         </div>
-        <h2 class="text-3xl font-bold tracking-tighter sm:text-5xl">Our Organizers</h2>
-        <p class="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+        <h2 class="text-3xl font-bold tracking-tighter sm:text-5xl">
+          Our Organizers
+        </h2>
+        <p
+          class="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed"
+        >
           Meet the dedicated team behind the Mongolian AWS Community.
         </p>
       </div>
@@ -64,14 +86,24 @@ const data = [
               <div class="flex justify-center">
                 <div class="relative">
                   <div class="absolute -inset-0.5 rounded-full bg-gradient-to-r from-orange-600 to-orange-400 opacity-25 blur group-hover:opacity-75 transition duration-300" />
-                  <Image width={150} height={150} alt={item.name} src={item.image} class="relative rounded-full aspect-square object-cover" />
+                  <Image
+                    width={150}
+                    height={150}
+                    alt={item.name}
+                    src={item.image}
+                    class="relative rounded-full aspect-square object-cover"
+                  />
                 </div>
               </div>
             </CardHeader>
             <CardContent>
               <CardTitle>{item.name}</CardTitle>
-              <CardDescription className="mt-2">{item.description}</CardDescription>
-              <p class="mt-4 text-sm text-muted-foreground">{item.achievements}</p>
+              <CardDescription className="mt-2">
+                {item.description}
+              </CardDescription>
+              <p class="mt-4 text-sm text-muted-foreground">
+                {item.achievements}
+              </p>
             </CardContent>
             <CardFooter className="flex justify-center gap-4">
               <a
