@@ -1,8 +1,9 @@
 ---
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { Card, CardDescription, CardTitle } from "@/components/ui/card";
 import { Image } from "astro:assets";
+import { cn } from "@/lib/utils";
 import { CalendarDays, Clock, MapPin, Users } from "lucide-react";
 ---
 
@@ -71,7 +72,7 @@ import { CalendarDays, Clock, MapPin, Users } from "lucide-react";
                   <CalendarDays
                     className="mr-2 h-5 w-5 text-orange-500 dark:text-orange-400"
                   />
-                  <span class="text-sm">May 30, 2025</span>
+                  <span class="text-sm">June 13, 2025</span>
                 </div>
                 <div class="flex items-center">
                   <Clock
@@ -83,7 +84,7 @@ import { CalendarDays, Clock, MapPin, Users } from "lucide-react";
                   <MapPin
                     className="mr-2 h-5 w-5 text-orange-500 dark:text-orange-400"
                   />
-                  <span class="text-sm">Unknown, Ulaanbaatar</span>
+                  <span class="text-sm">Ulaanbaatar</span>
                 </div>
                 <div class="flex items-center">
                   <Users
@@ -93,12 +94,17 @@ import { CalendarDays, Clock, MapPin, Users } from "lucide-react";
                 </div>
               </div>
               <div class="mt-auto">
-                <Button
-                  disabled
-                  className="w-full bg-orange-600 hover:bg-orange-700 dark:bg-orange-600 dark:hover:bg-orange-700 text-white"
-                >
-                  Registration starts soon
-                </Button>
+                <a
+                href="https://2025.aws.mn"
+                class={cn(
+                  buttonVariants({
+                    className:
+                      "bg-orange-600 hover:bg-orange-700 dark:bg-orange-600 dark:hover:bg-orange-700 text-white",
+                  }),
+                )}
+              >
+                Registration
+              </a>
               </div>
             </div>
           </div>
